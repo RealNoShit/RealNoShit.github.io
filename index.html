@@ -1,84 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Spinning & Bouncing PNGs</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    animation: rainbow 2s linear infinite;
-    background-size: 400% 400%;
-  }
-
-  @keyframes rainbow {
-    0% { background-color: red; }
-    16% { background-color: orange; }
-    33% { background-color: yellow; }
-    50% { background-color: green; }
-    66% { background-color: blue; }
-    83% { background-color: indigo; }
-    100% { background-color: violet; }
-  }
-
-  #center-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-    transform: translate(-50%, -50%);
-    animation: spin 3s linear infinite;
-  }
-
-  @keyframes spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  .bouncer {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spinning & Bouncing PNGs</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <img id="center-img" src="center.png" alt="Center PNG" />
   <img class="bouncer" id="bouncer1" src="bounce1.png" alt="Bouncer 1" />
   <img class="bouncer" id="bouncer2" src="bounce2.png" alt="Bouncer 2" />
 
-  <script>
-    const bouncers = [
-      { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
-      { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
-    ];
-
-    function moveBouncers() {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-
-      bouncers.forEach(b => {
-        b.x += b.dx;
-        b.y += b.dy;
-
-        if (b.x <= 0 || b.x + b.el.width >= w) b.dx *= -1;
-        if (b.y <= 0 || b.y + b.el.height >= h) b.dy *= -1;
-
-        b.el.style.left = b.x + 'px';
-        b.el.style.top = b.y + 'px';
-      });
-
-      requestAnimationFrame(moveBouncers);
-    }
-
-    moveBouncers();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
