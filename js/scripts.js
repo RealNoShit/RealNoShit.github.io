@@ -13,8 +13,23 @@ function moveBouncers() {
     b.x += b.dx;
     b.y += b.dy;
 
-    if (b.x <= 0 || b.x + b.el.width >= w) b.dx *= -1;
-    if (b.y <= 0 || b.y + b.el.height >= h) b.dy *= -1;
+    if (b.x <= 0) {
+  b.x = 0;
+  b.dx *= -1;
+}
+if (b.x + b.el.offsetWidth >= w) {
+  b.x = w - b.el.offsetWidth;
+  b.dx *= -1;
+}
+if (b.y <= 0) {
+  b.y = 0;
+  b.dy *= -1;
+}
+if (b.y + b.el.offsetHeight >= h) {
+  b.y = h - b.el.offsetHeight;
+  b.dy *= -1;
+}
+
 
     b.el.style.left = b.x + 'px';
     b.el.style.top = b.y + 'px';
