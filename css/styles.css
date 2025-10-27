@@ -54,7 +54,7 @@ body {
   font-weight: bold;
   color:magenta;
   text-shadow: 2px 2px 8px black;
-  z-index: 10;
+  z-index: 1000;
 }
 
 /* Menu botton*/
