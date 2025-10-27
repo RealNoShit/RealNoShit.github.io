@@ -1,8 +1,8 @@
 const bouncers = [
   { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
   { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
-  { el: document.getElementById('bouncer3'), x: 300, y: 200, dx: -2, dy: 3 },
-  { el: document.getElementById('bouncer4'), x: 300, y: 200, dx: -2, dy: 3 },
+  { el: document.getElementById('bouncer3'), x: 200, y: 300, dx: -2, dy: 3 },
+  { el: document.getElementById('bouncer4'), x: 300, y: 300, dx: 3, dy: 2 },
 ];
 
 function moveBouncers() {
