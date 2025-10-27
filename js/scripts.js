@@ -39,3 +39,14 @@ if (b.y + b.el.offsetHeight >= h) {
 }
 
 moveBouncers();
+
+
+//slide menu toggle
+document.getElementById('menu-button').addEventListener('click', () => {
+const menu = document.getElementById('side-menu');
+if (menu.style.left === "0px") {
+  menu.style.left = "-220px";
+} else {
+  menu.style.left = "0px";
+}
+});

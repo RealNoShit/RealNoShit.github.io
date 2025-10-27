@@ -27,6 +27,7 @@ body {
   height: 300px;
   transform: translate(-50%, -50%);
   animation: spin 3s linear infinite;
+  z-index: 1000;
 }
 
 @keyframes spin {
@@ -39,6 +40,7 @@ body {
   position: absolute;
   width: 240px;
   height: 240px;
+  z-index: 10;
 }
 
 /* Main title */
@@ -53,4 +55,45 @@ body {
   color:magenta;
   text-shadow: 2px 2px 8px black;
   z-index: 10;
+}
+
+/* Menu botton*/
+#menu-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 32px;
+  cursor: pointer;
+  color: aliceblue;
+  z-index: 2000;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* Side menu */
+#side-menu {
+  position: absolute;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: 0.35s;
+  z-index: 1500;
+}
+
+#side-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 18px;
+  text-align: left;
+  font-size: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#side-menu a:hover{
+  background: rgba(255, 255, 255, 0.2);
 }
