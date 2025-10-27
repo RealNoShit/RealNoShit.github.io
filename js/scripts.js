@@ -2,7 +2,7 @@ const bouncers = [
   { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
   { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
   { el: document.getElementById('bouncer3'), x: 600, y: 50, dx: 4, dy: -3 },
-  { el: document.getElementById('bouncer4'), x: 50, y: 500, dx: 5, dy: -2 },
+  { el: document.getElementById('bouncer4'), x: 50, y: 200, dx: 5, dy: -2 },
 ];
 
 function moveBouncers() {
