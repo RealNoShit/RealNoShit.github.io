@@ -75,48 +75,30 @@ const music = document.getElementById('menumusic');
 const muteBtn = document.getElementById('mute-button');
 const volumeSlider = document.getElementById('volume-slider');
 
-music.volume = 0.5;
-volumeSlider.value = 0.5;
-
 // Only activate audio controls if they exist on this page
 if (music && muteBtn && volumeSlider) {
 
+  //Sets default volume
   music.volume = 0.5;
   volumeSlider.value = 0.5;
 
+  //Allows music after first click
   document.addEventListener('click', () => {
     music.muted = false;
     music.play();
   }, { once: true });
 
+  //mute toggle
   muteBtn.addEventListener('click', () => {
     music.muted = !music.muted;
     muteBtn.textContent = music.muted ? "🔇" : "🔊";
   });
 
+  //volume slider
   volumeSlider.addEventListener('input', () => {
     music.volume = volumeSlider.value;
     muteBtn.textContent = (music.volume == 0) ? "🔇" : "🔊";
   });
 
 }
-
-// Mute toggle button
-muteBtn.addEventListener('click', () => {
-  music.muted = !music.muted;
-  muteBtn.textContent = music.muted ? "🔇" : "🔊";
-});
-
-// Volume slider
-volumeSlider.addEventListener('input', () => {
-  music.volume = volumeSlider.value;
-  if (music.volume == 0) {
-    music.muted = true;
-    muteBtn.textContent = "🔇";
-  } else {
-    music.muted = false;
-    muteBtn.textContent = "🔊";
-  }
-
-});
 };
