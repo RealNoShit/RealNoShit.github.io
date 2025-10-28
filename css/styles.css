@@ -88,7 +88,7 @@ body, img {
   flex-direction: column;
   padding-top: 60px;
   transition: 0.35s;
-  z-index: 1500;
+  z-index: 3000;
 }
 
 #side-menu a {
