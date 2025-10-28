@@ -61,15 +61,16 @@ if (b.y + b.el.offsetHeight >= h) {
 moveBouncers();
 
 
-//slide menu toggle
-document.getElementById('menu-button').addEventListener('click', () => {
-const menu = document.getElementById('side-menu');
-if (menu.style.left === "0px") {
-  menu.style.left = "-220px";
-} else {
-  menu.style.left = "0px";
+// Slide menu toggle (update 2 now orwks on all pages)
+const menuButton = document.getElementById('menu-button');
+const sideMenu = document.getElementById('side-menu');
+
+if (menuButton && sideMenu) {
+  menuButton.addEventListener('click', () => {
+    sideMenu.style.left = (sideMenu.style.left === "0px") ? "-220px" : "0px";
+  });
 }
-});
+
 
 //Music related
 const music = document.getElementById('menumusic');
@@ -79,6 +80,28 @@ const volumeSlider = document.getElementById('volume-slider');
 music.volume = 0.5;
 volumeSlider.value = 0.5;
 
+// Only activate audio controls if they exist on this page
+if (music && muteBtn && volumeSlider) {
+
+  music.volume = 0.5;
+  volumeSlider.value = 0.5;
+
+  document.addEventListener('click', () => {
+    music.muted = false;
+    music.play();
+  }, { once: true });
+
+  muteBtn.addEventListener('click', () => {
+    music.muted = !music.muted;
+    muteBtn.textContent = music.muted ? "🔇" : "🔊";
+  });
+
+  volumeSlider.addEventListener('input', () => {
+    music.volume = volumeSlider.value;
+    muteBtn.textContent = (music.volume == 0) ? "🔇" : "🔊";
+  });
+
+}
 
 // Mute toggle button
 muteBtn.addEventListener('click', () => {
