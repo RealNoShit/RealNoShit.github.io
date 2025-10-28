@@ -165,4 +165,31 @@ body, img {
   display: none; /* Hidden until activated */
 }
 
+/* page 2 */
+#movie-title {
+  position: absolute;
+  top: 6%;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 0px 12px black;
+  z-index: 2000;
+}
+
+#movie-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  background: black;
+  border-radius: 20px;
+  box-shadow: 0 0 20px black;
+  z-index: 2000;
+}
+
 
