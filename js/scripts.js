@@ -72,7 +72,7 @@ if (menu.style.left === "0px") {
 });
 
 //Music related
-const music = document.getElementById('menumusic.mp4');
+const music = document.getElementById('menumusic');
 const muteBtn = document.getElementById('mute-button');
 const volumeSlider = document.getElementById('volume-slider');
 
