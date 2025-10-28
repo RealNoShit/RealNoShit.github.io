@@ -77,7 +77,7 @@ const muteBtn = document.getElementById('mute-button');
 const volumeSlider = document.getElementById('volume-slider');
 
 music.volume = 0.5;
-volumeSlider = 0.5;
+volumeSlider.value = 0.5;
 
 
 // Mute toggle button
