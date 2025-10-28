@@ -50,3 +50,26 @@ if (menu.style.left === "0px") {
   menu.style.left = "0px";
 }
 });
+
+//Music related
+const music = document.getElementById('bg-music');
+const muteBtn = document.getElementById('mute-btn');
+const volumeSlider = document.getElementById('volume-slider');
+
+// Mute toggle button
+muteBtn.addEventListener('click', () => {
+  music.muted = !music.muted;
+  muteBtn.textContent = music.muted ? "🔇" : "🔊";
+});
+
+// Volume slider
+volumeSlider.addEventListener('input', () => {
+  music.volume = volumeSlider.value;
+  if (music.volume == 0) {
+    music.muted = true;
+    muteBtn.textContent = "🔇";
+  } else {
+    music.muted = false;
+    muteBtn.textContent = "🔊";
+  }
+});
