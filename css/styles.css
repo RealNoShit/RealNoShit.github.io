@@ -154,5 +154,15 @@ body, img {
   cursor: pointer;
 }
 
+#snake-canvas {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: black;
+  display: none; /* Hidden until activated */
+}
 
 

@@ -1,5 +1,23 @@
 window.onload = function() {
 
+  // Secret code detection
+  let secretInput = "";
+const activationCode = "snake";
+
+document.addEventListener("keydown", (event) => {
+  secretInput += event.key.toLowerCase();
+
+  // Keep only last characters equal to the code length
+  if (secretInput.length > activationCode.length) {
+    secretInput = secretInput.slice(-activationCode.length);
+  }
+
+  if (secretInput === activationCode) {
+    startSnakeGame();
+  }
+});
+
+//Bouncing pngs
 const bouncers = [
   { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
   { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
