@@ -1,3 +1,5 @@
+window.onload = function() {
+
 const bouncers = [
   { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
   { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
@@ -72,4 +74,6 @@ volumeSlider.addEventListener('input', () => {
     music.muted = false;
     muteBtn.textContent = "🔊";
   }
+
 });
+};
