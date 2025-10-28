@@ -22,43 +22,41 @@ const bouncers = [
   { el: document.getElementById('bouncer1'), x: 100, y: 100, dx: 3, dy: 2 },
   { el: document.getElementById('bouncer2'), x: 300, y: 200, dx: -2, dy: 3 },
   { el: document.getElementById('bouncer3'), x: 600, y: 50, dx: 4, dy: -3 },
-  { el: document.getElementById('bouncer4'), x: 50, y: 200, dx: 5, dy: -2 },
+  { el: document.getElementById('bouncer4'), x: 50, y: 200, dx: 5, dy: -2 }
 ];
 
-function moveBouncers() {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
+// Only run bouncing if the first bouncer exists
+if (bouncers[0].el) {
 
-  bouncers.forEach(b => {
-    b.x += b.dx;
-    b.y += b.dy;
+  function moveBouncers() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
-    if (b.x <= 0) {
-  b.x = 0;
-  b.dx *= -1;
-}
-if (b.x + b.el.offsetWidth >= w) {
-  b.x = w - b.el.offsetWidth;
-  b.dx *= -1;
-}
-if (b.y <= 0) {
-  b.y = 0;
-  b.dy *= -1;
-}
-if (b.y + b.el.offsetHeight >= h) {
-  b.y = h - b.el.offsetHeight;
-  b.dy *= -1;
-}
+    bouncers.forEach(b => {
+      if (!b.el) return;
 
+      b.x += b.dx;
+      b.y += b.dy;
 
-    b.el.style.left = b.x + 'px';
-    b.el.style.top = b.y + 'px';
-  });
+      if (b.x <= 0) { b.x = 0; b.dx *= -1; }
+      if (b.x + b.el.offsetWidth >= w) {
+        b.x = w - b.el.offsetWidth;
+        b.dx *= -1;
+      }
+      if (b.y <= 0) { b.y = 0; b.dy *= -1; }
+      if (b.y + b.el.offsetHeight >= h) {
+        b.y = h - b.el.offsetHeight;
+        b.dy *= -1;
+      }
 
-  requestAnimationFrame(moveBouncers);
-}
+      b.el.style.left = b.x + 'px';
+      b.el.style.top = b.y + 'px';
+    });
 
-moveBouncers();
+    requestAnimationFrame(moveBouncers);
+  }
+
+  moveBouncers();
 
 
 // Slide menu toggle (update 2 now orwks on all pages)
