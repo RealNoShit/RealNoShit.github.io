@@ -57,7 +57,7 @@ if (bouncers[0].el) {
   }
 
   moveBouncers();
-
+}
 
 // Slide menu toggle (update 2 now orwks on all pages)
 const menuButton = document.getElementById('menu-button');
