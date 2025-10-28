@@ -71,7 +71,7 @@ body, img {
   font-size: 32px;
   cursor: pointer;
   color: aliceblue;
-  z-index: 2000;
+  z-index: 6000;
   text-shadow: 2px 2px 5px black;
 }
 
