@@ -124,7 +124,7 @@ body, img {
   font-size: 30px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   text-shadow: 0 0 10px white, 0 0 20px cyan;
   transition: transform 0.2s;
