@@ -52,8 +52,8 @@ if (menu.style.left === "0px") {
 });
 
 //Music related
-const music = document.getElementById('bg-music');
-const muteBtn = document.getElementById('mute-btn');
+const music = document.getElementById('menumusic.mp4');
+const muteBtn = document.getElementById('mute-button');
 const volumeSlider = document.getElementById('volume-slider');
 
 // Mute toggle button

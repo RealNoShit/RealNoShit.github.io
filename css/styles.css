@@ -112,7 +112,7 @@ body {
   backdrop-filter: blur(6px);
 }
 
-#mute-btn {
+#mute-button {
   font-size: 22px;
   background: none;
   border: none;
