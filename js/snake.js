@@ -19,6 +19,8 @@ function startSnakeGame() {
 
   let gameLoop = setInterval(() => {
     let head = { x: snake[0].x + dx, y: snake[0].y + dy };
+    direction = nextDirection;
+    movedThisTick = false;
 
     // Collision: wall or self
     if (
@@ -53,10 +55,16 @@ function startSnakeGame() {
   }, 100);
 
   // Movement keys
+  let direction = { x: 0, y: 0 };
+  let nextDirection = direction;
+  let movedThisTick = false;
+
   document.addEventListener("keydown", (e) => {
+    if(movedThisTick) return;
     if (e.key === "ArrowUp" && dy === 0) { dx = 0; dy = -grid; }
     if (e.key === "ArrowDown" && dy === 0) { dx = 0; dy = grid; }
     if (e.key === "ArrowLeft" && dx === 0) { dx = -grid; dy = 0; }
     if (e.key === "ArrowRight" && dx === 0) { dx = grid; dy = 0; }
+    movedThisTick = true;
   });
 }
