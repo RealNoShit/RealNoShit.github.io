@@ -2,8 +2,10 @@ function startSnakeGame() {
   const canvas = document.getElementById("snake-canvas");
   const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  const tile_size = 20;
+  const tiles = 25;
+  canvas.width = tile_size * tiles;
+  canvas.height = tile_size * tiles;
 
   canvas.style.display = "block";
 
